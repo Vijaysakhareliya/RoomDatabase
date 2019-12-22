@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RoomDatabase</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_mobile_no">Enter Mobile no</string>
+    <string name="save">Save</string>
+    <string name="user_list">User List</string>
+
+
+    <string name="profile_github">https://github.com/Vijaysakhareliya</string>
+    <string name="profile_stack">https://stackoverflow.com/users/12045333/vijay-s30?tab=profile</string>
+    <string name="profile_linkedin">https://www.linkedin.com/in/vijay-sakhareliya-683108109/</string>
+    <string name="profile_twitter">https://twitter.com/Vijay_s30</string>
+</resources>
