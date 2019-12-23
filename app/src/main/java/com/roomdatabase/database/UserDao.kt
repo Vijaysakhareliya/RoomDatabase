@@ -1,7 +1,7 @@
 package com.roomdatabase.database
 
 import androidx.room.*
-import com.roomdatabase.UserModel
+import com.roomdatabase.main.UserModel
 
 /**
  * Dao : Data access object

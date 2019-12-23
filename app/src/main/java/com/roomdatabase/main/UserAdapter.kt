@@ -1,12 +1,13 @@
-package com.roomdatabase
+package com.roomdatabase.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.roomdatabase.R
 import com.roomdatabase.databinding.ItemUserBinding
 
-class UserAdapter(var listUser: List<UserModel>, var mPresenter : MainPresenter) :
+class UserAdapter(private var listUser: List<UserModel>, var mPresenter : MainContract.MainPresenter) :
     RecyclerView.Adapter<UserAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(

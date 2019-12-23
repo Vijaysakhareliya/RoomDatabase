@@ -5,11 +5,8 @@
 
         <variable
             name="presenter"
-            type="com.roomdatabase.MainPresenter" />
+            type="com.roomdatabase.main.MainContract.MainPresenter" />
 
-        <variable
-            name="mActivity"
-            type="android.app.Activity" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +15,7 @@
         android:layout_height="match_parent"
         android:background="#f0f0f0"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".main.MainActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,6 +64,12 @@
                 android:onClick="@{()->presenter.checkValidation(edName.getText().toString(),edEmail.getText().toString(),edPhoneNo.getText().toString())}"
                 android:text="@string/save" />
 
+            <LinearLayout
+                android:id="@+id/linearUserList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -84,6 +87,8 @@
                 android:layout_height="match_parent"
                 android:background="@color/white"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

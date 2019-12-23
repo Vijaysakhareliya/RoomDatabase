@@ -1,4 +1,4 @@
-package com.roomdatabase
+package com.roomdatabase.main
 
 interface MainContract {
     interface MainPresenter {

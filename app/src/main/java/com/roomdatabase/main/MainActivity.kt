@@ -1,28 +1,33 @@
-package com.roomdatabase
+package com.roomdatabase.main
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.roomdatabase.R
 import com.roomdatabase.database.AppDatabase
 import com.roomdatabase.database.UserDao
 import com.roomdatabase.databinding.ActivityMainBinding
+import com.roomdatabase.toast
 
 
 class MainActivity : AppCompatActivity(), MainContract.MainView {
 
     private lateinit var mContext: Context
     private lateinit var mBinding : ActivityMainBinding
-    private lateinit var mPresenter : MainPresenter
+    private lateinit var mPresenter : MainContract.MainPresenter
     private lateinit var mDatabase: AppDatabase
     private lateinit var mUserDao: UserDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        mBinding = DataBindingUtil.setContentView(this,
+            R.layout.activity_main
+        )
 
         mContext = this@MainActivity
 
@@ -49,7 +54,8 @@ class MainActivity : AppCompatActivity(), MainContract.MainView {
     //Insert data in Database with AsyncTask
     override fun insertData(stName: String, stEmail: String, stMobileNo: String) {
         AsyncTask.execute {
-            val userData = UserModel(stName, stEmail, stMobileNo)
+            val userData =
+                UserModel(stName, stEmail, stMobileNo)
             mUserDao.addUser(userData)
 
             runOnUiThread {
@@ -67,6 +73,9 @@ class MainActivity : AppCompatActivity(), MainContract.MainView {
             runOnUiThread {
                 if (listData.isNotEmpty()) {
                     setAdapterData(listData)
+                    mBinding.linearUserList.visibility = View.VISIBLE
+                } else {
+                    mBinding.linearUserList.visibility = View.GONE
                 }
             }
         }

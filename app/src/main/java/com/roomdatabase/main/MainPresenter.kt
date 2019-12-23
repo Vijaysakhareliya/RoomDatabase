@@ -1,6 +1,11 @@
-package com.roomdatabase
+package com.roomdatabase.main
 
-class MainPresenter(var viewMain: MainContract.MainView) : MainContract.MainPresenter {
+import com.roomdatabase.isStringCheck
+import com.roomdatabase.isValidEmail
+import com.roomdatabase.isValidPhone
+
+class MainPresenter(var viewMain: MainContract.MainView) :
+    MainContract.MainPresenter {
     override fun checkValidation(stName: String, stEmail: String, stMobileNo: String) {
         if (!isStringCheck(stName)) {
             viewMain.showError("Enter Name")
