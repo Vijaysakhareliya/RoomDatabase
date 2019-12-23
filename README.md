@@ -2,9 +2,7 @@
 
 This is a demo app on how to implement Room database in Android
 
-![](https://github.com/Vijaysakhareliya/RoomDatabase/blob/master/one.jpg)
-
-![](https://github.com/Vijaysakhareliya/RoomDatabase/blob/master/two.jpg)
+<img src="/one.png" width="250" height="480">   <img src="/two.png" width="250" height="480">
 
 # Used
   - Kotlin
